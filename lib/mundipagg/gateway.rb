@@ -32,7 +32,7 @@ module Mundipagg
 			@environment = environment
 
 			if environment == :test
-				@log_level = :debug
+				@log_level = :none
 			else
 				@log_level = :error
 			end
