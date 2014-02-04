@@ -30,14 +30,7 @@ module Mundipagg
 		def initialize(environment=:test)
 			@parser = Nori.new(:convert_tags_to => lambda { |tag| tag })
 			@environment = environment
-
-			if environment == :test
-				@log_level = :none
-			else
-				@log_level = :error
-			end
-
-
+			@log_level = :none
 		end
 
 		# This method makes requests to the webservice method ManageOrder.
