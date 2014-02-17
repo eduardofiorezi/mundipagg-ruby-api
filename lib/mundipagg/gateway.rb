@@ -324,10 +324,13 @@ module Mundipagg
 			level = :debug
 			enable_log = true
 
+			filters = [:CreditCardNumber,
+			           :SecurityCode,
+			           :MerchantKey]
 
 			if @log_level == :none
-				enable_log = false
 				level = :error
+				enable_log = false
 			end
 
 
@@ -335,6 +338,7 @@ module Mundipagg
 				wsdl url
 				log enable_log
 				log_level level
+				filters filters
 				namespaces 'xmlns:mun' => 'http://schemas.datacontract.org/2004/07/MundiPagg.One.Service.DataContracts'
 			end
 
